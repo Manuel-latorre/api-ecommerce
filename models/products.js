@@ -10,8 +10,10 @@ const productsSchema = new Schema({
     imageDetail1:{ type: String, required:true },
     imageDetail2:{ type: String, required:true },
     brand: { type: String, required: true },
+    brandLogo: {type: String, required: true},
     color: { type: String, required: true },
-    description: { type: String, required: true }
+    description: { type: String, required: true },
+    category: {type: String, require: true},
 })
 
 module.exports = model('Product', productsSchema);
