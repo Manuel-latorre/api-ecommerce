@@ -19,6 +19,7 @@ app.use(express.json())
 
 app.get('/products', controllers.getProducts);
 app.get('/products-cart', controllers.getProductsCart);
+app.get('/products/:id', controllers.getProductById);
 
 
 /* POST *//* POST *//* POST *//* POST *//* POST *//* POST */
