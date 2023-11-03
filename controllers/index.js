@@ -5,6 +5,7 @@ const addProductCart = require('./addProductCart');
 const putProduct = require('./putProduct');
 const deleteProduct = require('./deleteProductCart');
 const addProduct  =require('./addProduct')
+const searchProductsByName = require('./searchProductsByName')
 
 module.exports = {
     getProducts,
@@ -14,4 +15,5 @@ module.exports = {
     addProductCart,
     putProduct,
     deleteProduct,
+    searchProductsByName,
 };

@@ -19,6 +19,7 @@ app.use(express.json())
 
 app.get('/products', controllers.getProducts);
 app.get('/products-cart', controllers.getProductsCart);
+app.get('/products/search', controllers.searchProductsByName);
 app.get('/products/:id', controllers.getProductById);
 
 
@@ -74,8 +75,6 @@ app.post("/create_preference", (req, res) => {
 
     console.log(res);
 })
-
-
 
 
 
