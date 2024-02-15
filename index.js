@@ -22,10 +22,12 @@ app.get('/products-cart', controllers.getProductsCart);
 app.get('/products/search', controllers.searchProductsByName);
 app.get('/products/search/term', controllers.searchProductsByTerm)
 app.get('/products/:id', controllers.getProductById);
-app.post('/login', controllers.loginUser);
+app.get('/users', controllers.getAllUsers);
+app.get('/user/:id', controllers.getUserById);
 
 /* POST *//* POST *//* POST *//* POST *//* POST *//* POST */
 app.post('/register', controllers.createUser);
+app.post('/login', controllers.loginUser);
 app.post('/products-cart', controllers.addProductCart);
 app.post('/products', controllers.addProduct);
 

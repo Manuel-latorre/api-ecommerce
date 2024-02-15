@@ -9,6 +9,8 @@ const searchProductsByName = require('./searchProductsByName')
 const searchProductsByTerm = require('./searchProductsByquery')
 const createUser = require('./createUser');
 const loginUser = require('./loginUser');
+const getAllUsers = require('./getUsers');
+const getUserById = require('./getUserById');
 
 module.exports = {
     getProducts,
@@ -22,4 +24,6 @@ module.exports = {
     searchProductsByTerm,
     createUser,
     loginUser,
+    getAllUsers,
+    getUserById,
 };
