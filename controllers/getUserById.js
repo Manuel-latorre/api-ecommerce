@@ -12,8 +12,15 @@ const getUserById = async (req, res) => {
             return res.status(404).json({ message: 'Usuario no encontrado.' });
         }
 
-        // Si se encontró el usuario, devolverlo en la respuesta
-        res.status(200).json(user);
+        const simplifiedUser = {
+            fullname: user.fullname,
+            email: user.email,
+            id: user.id,
+            cart: user.cart
+        };
+
+        // Devolver el usuario simplificado en la respuesta
+        res.status(200).json(simplifiedUser);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Error interno del servidor.' });
