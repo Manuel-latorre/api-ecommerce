@@ -48,7 +48,7 @@ mercadopago.configure({
 })
 
 app.get("/", function(req, res){
-    res.send("backend maercadopago")
+    res.send("Welcome to api")
 })
 
 app.post("/create_preference", (req, res) => {
