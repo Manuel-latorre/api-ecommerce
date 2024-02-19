@@ -10,7 +10,7 @@ const putProduct = async (req, res) => {
     const searchProd = await Cart.findById(productId);
 
     if(!query) {
-        res.status(404).json({mesnaje: "Enviar una query"});
+        res.status(404).json({mensaje: "Enviar una query"});
     } else if (searchProd && query === "add"){
         body.amount = body.amount + 1;
 

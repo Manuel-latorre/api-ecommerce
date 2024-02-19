@@ -10,8 +10,15 @@ const getAllUsers = async (req, res) => {
             return res.status(404).json({ message: 'No se encontraron usuarios.' });
         }
 
-        // Si se encontraron usuarios, devolverlos en la respuesta
-        res.status(200).json(users);
+        const simplifiedUsers = users.map(user => ({
+            fullname: user.fullname,
+            email: user.email,
+            id: user.id,
+            cart: user.cart
+        }));
+
+        // Devolver los usuarios simplificados en la respuesta
+        res.status(200).json(simplifiedUsers);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Error interno del servidor.' });
