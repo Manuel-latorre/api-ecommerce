@@ -12,7 +12,7 @@ const putProduct = async (req, res) => {
     if(!query) {
         res.status(404).json({mensaje: "Send a query"});
     } else if (searchProd && query === "add"){
-        body.amount = body.amount + 1;
+        body.quantity = body.quantity + 1;
 
         await Cart.findByIdAndUpdate(productId, body, {
             new: true,
@@ -23,7 +23,7 @@ const putProduct = async (req, res) => {
             });  
         });
     } else if (searchProd && query === "del") {
-        body.amount = body.amount - 1;
+        body.quantity = body.quantity - 1;
 
         await Cart.findByIdAndUpdate(productId, body,  {
             new: true,

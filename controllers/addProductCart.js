@@ -15,7 +15,7 @@ const addProductCart  = async (req, res) => {
             mensaje: "This product is not available",
         });
     }else if (ifEmpty && !ifStayIncart){
-        const newProdInCart = new Cart({name, imageCard, price, amount: 1});
+        const newProdInCart = new Cart({name, imageCard, price, quantity: 1});
 
         await Product.findByIdAndUpdate(
             ifExist?._id,
