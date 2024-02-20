@@ -6,7 +6,7 @@ const getProducts = async (req, res) => {
     if(products) {
         res.json({products});
     }else{
-        res.json({mensaje: 'No hay productos'})
+        res.json({mensaje: 'No products'})
     }
 }
 

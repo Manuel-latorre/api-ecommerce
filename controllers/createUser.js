@@ -8,13 +8,13 @@ const createUser = async (req, res) => {
 
         // Validar que los campos requeridos estén presentes
         if (!fullname || !email || !password) {
-            return res.status(400).json({ error: 'Todos los campos son obligatorios.' });
+            return res.status(400).json({ error: 'All fields are required.' });
         }
 
         // Verificar si el usuario ya existe
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-            return res.status(409).json({ error: 'El correo electrónico ya está registrado.' });
+            return res.status(409).json({ error: 'The email is already registered.' });
         }
 
         // Cifrar la contraseña antes de almacenarla
@@ -38,7 +38,7 @@ const createUser = async (req, res) => {
         });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Error interno del servidor.' });
+        res.status(500).json({ error: 'Internal Server Error.' });
     }
 };
 

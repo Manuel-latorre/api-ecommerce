@@ -10,7 +10,7 @@ const putProduct = async (req, res) => {
     const searchProd = await Cart.findById(productId);
 
     if(!query) {
-        res.status(404).json({mensaje: "Enviar una query"});
+        res.status(404).json({mensaje: "Send a query"});
     } else if (searchProd && query === "add"){
         body.amount = body.amount + 1;
 
@@ -18,7 +18,7 @@ const putProduct = async (req, res) => {
             new: true,
         }).then((product) => {
             res.json({
-                mensaje: `El producto: ${product.name} fue actualizado`,
+                mensaje: `Product: ${product.name} was updated`,
                 product,
             });  
         });
@@ -29,7 +29,7 @@ const putProduct = async (req, res) => {
             new: true,
         }).then((product) => {
             res.json({
-                mensaje: `El producto: ${product.name} fue actualizado`,
+                mensaje: `Product: ${product.name} was updated`,
                 product,
             })
         })

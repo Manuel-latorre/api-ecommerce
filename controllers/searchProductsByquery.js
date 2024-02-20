@@ -8,8 +8,8 @@ const searchProductsByTerm = async (req, res) => {
       const results = await Product.find({ name: { $regex: new RegExp(q, 'i') } });
       res.status(200).json(results);
     } catch (error) {
-      console.error('Error al obtener resultados de búsqueda por término:', error);
-      res.status(500).json({ error: 'Error interno del servidor' });
+      console.error('Error during search of products by name:', error);
+      res.status(500).json({ error: 'Internal server error' });
     }
   };
   

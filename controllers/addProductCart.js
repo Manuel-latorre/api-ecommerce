@@ -12,7 +12,7 @@ const addProductCart  = async (req, res) => {
 
     if(!ifExist){
         res.status(400).json({
-            mensaje: "Este producto no se ecnuentra disponible",
+            mensaje: "This product is not available",
         });
     }else if (ifEmpty && !ifStayIncart){
         const newProdInCart = new Cart({name, imageCard, price, amount: 1});
@@ -26,14 +26,14 @@ const addProductCart  = async (req, res) => {
         .then((product) => {
             newProdInCart.save();
             res.json({
-                mensaje: `El producto fue agregado al carrito`,
+                mensaje: `Product was added to cart`,
                 product,
             });
         })
         .catch((error) => console.log(error));
     } else if(ifStayIncart){
         res.status(400).json({
-            mensaje: 'El producto ya esta en el carrito'
+            mensaje: 'This product is already in the cart'
         });
     }
 }

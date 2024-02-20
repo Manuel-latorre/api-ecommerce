@@ -19,10 +19,10 @@ const deleteProductCart = async (req, res) => {
 
     .then((product) => {
         res.json({
-            mensaje: `El producto ${product.name} fue eliminado del carrito`,
+            message: `Product ${product.name} was deleted from cart`,
         });
     })
-    .catch((error) => res.json({mensaje: 'Hubo un error'}));
+    .catch((error) => res.json({message: 'There was a error'}));
 };
 
 module.exports = deleteProductCart;

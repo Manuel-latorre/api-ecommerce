@@ -9,7 +9,7 @@ const getUserById = async (req, res) => {
 
         // Si no se encontró el usuario, devolver un mensaje indicando que no se encontró
         if (!user) {
-            return res.status(404).json({ message: 'Usuario no encontrado.' });
+            return res.status(404).json({ message: 'User not found.' });
         }
 
         const simplifiedUser = {
@@ -23,7 +23,7 @@ const getUserById = async (req, res) => {
         res.status(200).json(simplifiedUser);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: 'Error interno del servidor.' });
+        res.status(500).json({ error: 'Internal server error.' });
     }
 };
 
